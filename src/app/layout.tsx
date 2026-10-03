@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
+import WhatsAppFAB from "@/components/WhatsAppFAB";
 import { SITE_CONFIG } from "@/data/company";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -140,6 +141,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <QuoteModal />
+        <WhatsAppFAB />
       </body>
     </html>
   );

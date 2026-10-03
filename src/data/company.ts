@@ -12,18 +12,18 @@ export const SITE_CONFIG = {
   // Contact details - official address reference & transparent project enquiry channels
   contact: {
     address: "PKM Industrial Complex, Mel Ayanambakkam, Chennai – 600 095, Tamil Nadu, India",
-    phone: "+91 89258 57821 / +91 89258 57824",
-    phoneHref: "tel:+918925857821",
-    email: "enquiry@vectorfoodequipments.example",
-    whatsapp: "+91 89258 57821",
-    whatsappHref: "https://wa.me/918925857821?text=Hello%20Vector%20Food%20Equipments%2C%20I%20would%20like%20to%20enquire%20about%20commercial%20kitchen%20solutions.",
+    phone: "+91 89258 57824",
+    phoneHref: "tel:+918925857824",
+    email: "info@vectorfoodequipments.com",
+    whatsapp: "+91 89258 57824",
+    whatsappHref: "https://wa.me/918925857824?text=Hello%20Vector%20Food%20Equipments%2C%20I%20would%20like%20to%20enquire%20about%20commercial%20kitchen%20solutions.",
     businessHours: "Monday – Saturday: 9:00 AM – 6:30 PM IST",
     emergencySupport: "Technical & breakdown maintenance assistance available for commercial facilities",
   },
 
   socials: {
     linkedin: "https://linkedin.com/company/vector-food-equipments",
-    whatsapp: "https://wa.me/918925857821",
+    whatsapp: "https://wa.me/918925857824",
   },
 
   nav: [
@@ -78,21 +78,26 @@ export const WORKFLOW_PROCESS = [
   },
   {
     step: "04",
+    title: "MEP Plans",
+    description: "Coordinated civil plinths, plumbing, electrical loads, and gas line schematics.",
+  },
+  {
+    step: "05",
     title: "Equipment Selection",
     description: "Matching heavy-duty commercial appliances and custom fabrication to menu requirements.",
   },
   {
-    step: "05",
+    step: "06",
     title: "Fabrication / Supply",
     description: "Precision food-grade SS 304 construction and procurement of reliable kitchen machinery.",
   },
   {
-    step: "06",
+    step: "07",
     title: "Installation",
     description: "On-site equipment positioning, utility line hookups, exhaust integration, and pre-commission testing.",
   },
   {
-    step: "07",
+    step: "08",
     title: "Support",
     description: "Technical training, preventive AMC schedules, and rapid breakdown response.",
   },

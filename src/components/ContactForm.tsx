@@ -37,6 +37,7 @@ export default function ContactForm({
     "Food Court / QSR Chain",
     "Institutional / College / Hospital",
     "Industrial Central Production Kitchen",
+    "Commercial Gas Pipeline Project",
     "SS Custom Fabrication Project",
     "Exhaust & Fresh Air Infrastructure",
     "Other Commercial Facility",
@@ -45,6 +46,7 @@ export default function ContactForm({
   const requirementTypes = [
     "Complete Kitchen Planning & BOQ",
     "Commercial Cooking Ranges & Suites",
+    "Commercial Gas Line & Manifolds",
     "Commercial Refrigeration & Cold Rooms",
     "Commercial Dishwashing Systems",
     "Bakery & Combi Ovens",

@@ -3,21 +3,20 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
-  ArrowUpRight,
   DraftingCompass,
   Flame,
   Wrench,
-  Layers,
+  Fuel,
   Wind,
+  Layers,
+  HardHat,
   ShieldCheck,
-  CheckCircle,
-  Building,
   Check,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import OurGroupBrands from "@/components/OurGroupBrands";
 import { CATEGORIES } from "@/data/categories";
-import { CORE_PILLARS, WORKFLOW_PROCESS, SITE_CONFIG } from "@/data/company";
+import { CORE_PILLARS, WORKFLOW_PROCESS } from "@/data/company";
 import { INDUSTRIES } from "@/data/industries";
 
 export default function HomePage() {
@@ -45,10 +44,10 @@ export default function HomePage() {
     },
     {
       number: "04",
-      title: "KITCHEN INFRASTRUCTURE",
-      description: "Coordinated civil curbs, plumbing lines, electrical distributions, and floor trench drainage.",
-      icon: Layers,
-      href: "/kitchen-design",
+      title: "COMMERCIAL GAS LINE",
+      description: "Engineered LPG/PNG pipeline manifolds, pressure reducing stations, leak detection, and auto-shutoffs.",
+      icon: Fuel,
+      href: "/kitchen-design#gas-line-layout",
     },
     {
       number: "05",
@@ -59,8 +58,22 @@ export default function HomePage() {
     },
     {
       number: "06",
+      title: "KITCHEN INFRASTRUCTURE",
+      description: "Coordinated civil curbs, plumbing lines, electrical distributions, and floor trench drainage.",
+      icon: Layers,
+      href: "/kitchen-design",
+    },
+    {
+      number: "07",
+      title: "TURNKEY INSTALLATION",
+      description: "On-site equipment positioning, utility line hookups, precision leveling, and pre-commission test burns.",
+      icon: HardHat,
+      href: "/services",
+    },
+    {
+      number: "08",
       title: "TECHNICAL & MAINTENANCE SUPPORT",
-      description: "On-site installation, trial commissioning, preventive AMC schedules, and breakdown repairs.",
+      description: "On-site trial runs, staff operational training, preventive AMC schedules, and breakdown repairs.",
       icon: ShieldCheck,
       href: "/services",
     },
@@ -109,7 +122,7 @@ export default function HomePage() {
               </div>
 
               {/* Supported Scope Pill Checklist */}
-              <div className="pt-6 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs text-slate-600">
+              <div className="pt-6 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-red-600 shrink-0" />
                   <span>Layout & BOQ Planning</span>
@@ -117,6 +130,10 @@ export default function HomePage() {
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-red-600 shrink-0" />
                   <span>Custom SS 304 Fabrication</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                  <span>Commercial Gas Line</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-red-600 shrink-0" />
@@ -129,6 +146,10 @@ export default function HomePage() {
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-red-600 shrink-0" />
                   <span>Walk-in Cold Storage</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                  <span>Turnkey Installation</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-red-600 shrink-0" />
@@ -239,43 +260,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. SOLUTIONS SECTION (6 CARDS) */}
+      {/* 4. SOLUTIONS SECTION (8 CARDS) */}
       <section className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Turnkey Scope"
             title="Complete Kitchen Solutions"
-            description="Vector integrates planning, fabrication, equipment supply, and technical assistance into a unified commercial kitchen implementation."
+            description="Vector integrates planning, custom fabrication, commercial gas lines, equipment supply, and technical maintenance into a unified implementation."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {solutions.map((item) => {
               const Icon = item.icon;
               return (
                 <Link
                   key={item.number}
                   href={item.href}
-                  className="group bg-white p-7 sm:p-8 rounded-xl border border-slate-200 shadow-xs hover:border-red-300 hover:shadow-lg hover:shadow-slate-900/5 transition-all duration-300 flex flex-col justify-between"
+                  className="group bg-white p-6 sm:p-7 rounded-xl border border-slate-200 shadow-xs hover:border-red-300 hover:shadow-lg hover:shadow-slate-900/5 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-lg bg-red-50 border border-red-100 text-red-600 flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-colors duration-200">
-                        <Icon className="w-6 h-6" />
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-11 h-11 rounded-lg bg-red-50 border border-red-100 text-red-600 flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-colors duration-200">
+                        <Icon className="w-5 h-5" />
                       </div>
                       <span className="text-xs font-black tracking-widest text-slate-300 group-hover:text-red-500 transition-colors">
                         {item.number}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-slate-900 tracking-tight group-hover:text-red-600 transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight group-hover:text-red-600 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-slate-600 mt-2.5 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-slate-700 group-hover:text-red-600 transition-colors">
+                  <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-slate-700 group-hover:text-red-600 transition-colors">
                     <span>Learn More</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -394,29 +415,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. HORIZONTAL PROCESS (FROM CONCEPT TO KITCHEN) */}
+      {/* 7. HORIZONTAL PROCESS (KITCHEN EXECUTION) */}
       <section className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Turnkey Execution"
-            title="From Concept to Kitchen"
-            description="A structured 7-stage engineering methodology ensuring precision from initial spatial discovery to commissioning."
+            eyebrow="Turnkey Process"
+            title="Kitchen Execution"
+            description="A structured 8-stage engineering methodology ensuring precision from initial spatial discovery to commissioning."
           />
 
           <div className="relative">
             {/* Desktop connecting line */}
-            <div className="hidden lg:block absolute top-7 left-8 right-8 h-0.5 bg-red-100 z-0" />
+            <div className="hidden lg:block absolute top-5.5 xl:top-6 left-6 right-6 h-0.5 bg-red-100 z-0" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-6 relative z-10">
-              {WORKFLOW_PROCESS.map((item, idx) => (
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-5 lg:gap-2.5 xl:gap-4 relative z-10">
+              {WORKFLOW_PROCESS.map((item) => (
                 <div key={item.step} className="flex flex-col items-start lg:items-center text-left lg:text-center">
-                  <div className="w-14 h-14 rounded-full bg-white border-2 border-red-600 text-red-600 font-extrabold text-sm flex items-center justify-center shadow-sm mb-4">
+                  <div className="w-12 h-12 lg:w-11 lg:h-11 xl:w-12 xl:h-12 rounded-full bg-white border-2 border-red-600 text-red-600 font-extrabold text-xs lg:text-xs xl:text-sm flex items-center justify-center shadow-xs mb-3.5 shrink-0">
                     {item.step}
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 tracking-tight">
+                  <h3 className="text-xs xl:text-sm font-bold text-slate-900 tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                  <p className="text-[11px] xl:text-xs text-slate-500 mt-1 leading-snug xl:leading-relaxed">
                     {item.description}
                   </p>
                 </div>

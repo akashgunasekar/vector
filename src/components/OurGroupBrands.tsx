@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, ArrowRight, ShieldCheck, Check } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 interface BrandItem {
   id: string;
@@ -10,12 +10,11 @@ interface BrandItem {
   description: string;
   logo: string;
   aspectClass: string;
-  isCurrentBrand: boolean;
   ctaText: string;
   url: string;
   isExternal: boolean;
   accentBorderHover: string;
-  badgeText?: string;
+  badgeText: string;
   badgeStyle: string;
   buttonStyle: string;
 }
@@ -29,14 +28,13 @@ const GROUP_BRANDS: BrandItem[] = [
       "Turnkey kitchen planning, 2D/3D layouts, food-grade SS 304 fabrication, equipment supply, and technical maintenance support.",
     logo: "/brands/vector-official-logo.png",
     aspectClass: "h-14 w-44 sm:h-16 sm:w-48",
-    isCurrentBrand: true,
     ctaText: "Explore Vector",
-    url: "/",
+    url: "/products",
     isExternal: false,
     accentBorderHover: "hover:border-red-500 hover:shadow-red-500/10",
-    badgeText: "Current Brand",
+    badgeText: "Commercial Kitchen Solutions",
     badgeStyle: "bg-red-50 text-red-600 border-red-200",
-    buttonStyle: "bg-red-600 hover:bg-red-700 text-white shadow-xs border-red-600",
+    buttonStyle: "bg-slate-900 hover:bg-red-600 text-white shadow-xs border-slate-900 hover:border-red-600",
   },
   {
     id: "maxwell-induction",
@@ -46,7 +44,6 @@ const GROUP_BRANDS: BrandItem[] = [
       "High-efficiency commercial induction ranges, boiling kettles, induction woks, and flameless kitchen equipment.",
     logo: "/brands/maxwell-induction-original.png",
     aspectClass: "h-12 w-48 sm:h-14 sm:w-52",
-    isCurrentBrand: false,
     ctaText: "Visit Maxwell Induction",
     url: "https://www.maxwellinduction.com/",
     isExternal: true,
@@ -63,9 +60,8 @@ const GROUP_BRANDS: BrandItem[] = [
       "Industrial electric kadhais, motorized tilting kettles, planetary mixers, and heavy machinery for commercial food processing.",
     logo: "/brands/sk-powercook-original.png",
     aspectClass: "h-14 w-44 sm:h-16 sm:w-48",
-    isCurrentBrand: false,
-    ctaText: "Explore SK Power Cook",
-    url: "https://sk-powercook.example/",
+    ctaText: "Visit SK Power Cook",
+    url: "https://www.skpcm.com/",
     isExternal: true,
     accentBorderHover: "hover:border-orange-500 hover:shadow-orange-500/10",
     badgeText: "Food Processing Machinery",
@@ -100,94 +96,72 @@ export default function OurGroupBrands() {
 
         {/* 3 Brand Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
-          {GROUP_BRANDS.map((brand) => {
-            const isCurrent = brand.isCurrentBrand;
-
-            return (
-              <div
-                key={brand.id}
-                className={`relative bg-white rounded-2xl border p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-xs hover:shadow-lg ${
-                  isCurrent
-                    ? "border-red-300 ring-1 ring-red-100"
-                    : "border-slate-200"
-                } ${brand.accentBorderHover}`}
-              >
-                {/* Visual Highlight indicator for current brand */}
-                {isCurrent && (
-                  <div className="absolute -top-3 left-6 sm:left-8 bg-red-600 text-white text-[10px] font-extrabold uppercase tracking-wider px-3 py-0.5 rounded-full shadow-xs">
-                    Current Website
-                  </div>
-                )}
-
-                <div>
-                  {/* Brand Top Header: Category Badge */}
-                  <div className="flex items-center justify-between gap-2 mb-6">
-                    <span
-                      className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${brand.badgeStyle}`}
-                    >
-                      {brand.badgeText}
-                    </span>
-
-                    {isCurrent && (
-                      <span className="text-xs font-semibold text-red-600 flex items-center gap-1">
-                        <Check className="w-3.5 h-3.5" />
-                        <span>Active</span>
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Clean White Logo Container (Preserves original colors) */}
-                  <div className="h-24 sm:h-28 w-full bg-white rounded-xl border border-slate-100 flex items-center justify-center p-3 mb-6">
-                    <div className={`relative ${brand.aspectClass}`}>
-                      <Image
-                        src={brand.logo}
-                        alt={`${brand.name} Logo`}
-                        fill
-                        sizes="(max-width: 1024px) 80vw, 30vw"
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Brand Info */}
-                  <h3 className="text-lg font-extrabold text-slate-900 tracking-tight">
-                    {brand.name}
-                  </h3>
-
-                  <p className="text-xs font-bold text-slate-700 mt-1">
-                    &ldquo;{brand.tagline}&rdquo;
-                  </p>
-
-                  <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
-                    {brand.description}
-                  </p>
+          {GROUP_BRANDS.map((brand) => (
+            <div
+              key={brand.id}
+              className={`relative bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-xs hover:shadow-lg ${brand.accentBorderHover}`}
+            >
+              <div>
+                {/* Brand Top Header: Category Badge */}
+                <div className="flex items-center justify-between gap-2 mb-6">
+                  <span
+                    className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${brand.badgeStyle}`}
+                  >
+                    {brand.badgeText}
+                  </span>
                 </div>
 
-                {/* Card CTA Footer */}
-                <div className="mt-8 pt-5 border-t border-slate-100">
-                  {brand.isExternal ? (
-                    <a
-                      href={brand.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 active:scale-98 ${brand.buttonStyle}`}
-                    >
-                      <span>{brand.ctaText}</span>
-                      <ArrowUpRight className="w-4 h-4" />
-                    </a>
-                  ) : (
-                    <Link
-                      href={brand.url}
-                      className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 active:scale-98 ${brand.buttonStyle}`}
-                    >
-                      <span>{brand.ctaText}</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  )}
+                {/* Clean White Logo Container (Preserves original colors) */}
+                <div className="h-24 sm:h-28 w-full bg-white rounded-xl border border-slate-100 flex items-center justify-center p-3 mb-6">
+                  <div className={`relative ${brand.aspectClass}`}>
+                    <Image
+                      src={brand.logo}
+                      alt={`${brand.name} Logo`}
+                      fill
+                      sizes="(max-width: 1024px) 80vw, 30vw"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
+
+                {/* Brand Info */}
+                <h3 className="text-lg font-extrabold text-slate-900 tracking-tight">
+                  {brand.name}
+                </h3>
+
+                <p className="text-xs font-bold text-slate-700 mt-1">
+                  &ldquo;{brand.tagline}&rdquo;
+                </p>
+
+                <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                  {brand.description}
+                </p>
               </div>
-            );
-          })}
+
+              {/* Card CTA Footer */}
+              <div className="mt-8 pt-5 border-t border-slate-100">
+                {brand.isExternal ? (
+                  <a
+                    href={brand.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 active:scale-98 ${brand.buttonStyle}`}
+                  >
+                    <span>{brand.ctaText}</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                ) : (
+                  <Link
+                    href={brand.url}
+                    className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 active:scale-98 ${brand.buttonStyle}`}
+                  >
+                    <span>{brand.ctaText}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Bottom Group Note */}

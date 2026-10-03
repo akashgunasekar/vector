@@ -94,4 +94,4 @@ npm run start
 
 - **Company:** Vector Food Equipments (Maxwell Group)
 - **Location:** PKM Industrial Complex, Mel Ayanambakkam, Chennai – 600 095, Tamil Nadu, India
-- **Phone:** +91 89258 57821 / +91 89258 57824
+- **Phone:** +91 89258 57824
